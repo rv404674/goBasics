@@ -13,6 +13,7 @@ func index_handler(w http.ResponseWriter, r *http.Request) {
 func about_handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Web server created by Rahul")
 }
+
 func main() {
 
 	// "/" denotes base page. Index_handler is the function you want to run
