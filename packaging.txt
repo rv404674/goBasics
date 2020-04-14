@@ -1,0 +1,65 @@
+Packaging in Go
+
+1. Packages are used to organize Go source code for better reusability and readability.
+Packages are collections of GO source files that reside in the same directory.
+
+We can create packages simpleinterest, compoundinterest and loan.
+If the loan package needs to calculate the simple interest, it can simply do so by importing the simpleinterest package.
+This way the code is reused
+
+
+
+Go install vs go build
+
+Go build just compile the executable file and move it to destination.
+Go install do a little more.
+It move the executable file to $GOPATH/bin and cache all non-main packages which imported to $GOPATH/pkg.
+the cache will be use in the next compile if it not changed yet.
+
+On my opinion,
+ I prefer use go install, because my project has 50k lines of code.
+ It takes 1min to build by using go build even I only change a file. 
+
+ When I use go install, it will take the same time with go build the first time, 
+ and I only take 4 sec to recompile if I change a file(most time spend on the linker).
+
+
+Go module is a collection of go packages
+ 
+ export GOBIN=~/go/bin/  
+(if you want to do go install)
+
+go install
+to run the exec - "~/go/bin/package_name"
+
+1. go mod init learnpackage   (in the root folder of your project)
+├── learnpackage
+│   ├── go.mod
+│   ├── main.go
+│   └── simpleinterest
+│       └── simpleinterest.go
+
+NOTE - Go tools like go install work in the context of the current directory
+go install takes an optional package name as a parameter(in our case the package name
+ is learnpackage) and it tries to compile the main function if the package exists in the
+  current directory from which it is run or in the parent directory or
+   it's parent directory and so on.
+
+When we move to ~/Documents/learnpackage/, there is a go.mod file there and our module name is learnpackage in that go.mod file.
+so go install learnpackage will work from inside the ~/Documents/learnpackage/ directory.
+
+go install has the ability to recursively search the parent directory for a go.mod file
+
+Any variable or function which starts with a capital letter are exported names in go.
+ Only exported functions and variables can be accessed from other packages.
+ In our case, we want to access Calculate function from the main package
+
+
+ init function
+Each package in Go can contain an init function. The init function must not have any return type and it must not have any parameters.
+ The init function cannot be called explicitly in our source code.
+  It will be called automatically when the package is initialized.
+   The init function has the following syntax
+
+func init() {  
+}
