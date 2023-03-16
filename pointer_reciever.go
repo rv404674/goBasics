@@ -19,6 +19,12 @@ func (c *Student) new_comp_marks(new_marks int) {
 	c.comp_sc_marks = new_marks
 }
 
+// NOTE: another way of using pointer. here the function is not attached to struct.
+// and you need to pass &
+func newCompMarks(s *Student, newMarks int) {
+	s.comp_sc_marks = newMarks
+}
+
 // value reciever
 func (s Student) total_marks() int {
 	//it makes a copy of s, and then to all the calculations/changes on it,
@@ -41,6 +47,10 @@ func main() {
 
 	student1.new_comp_marks(120)
 	fmt.Println(student1.comp_sc_marks)
+
+	// using the function.
+	newCompMarks(&student1, 1000)
+	fmt.Println(student1)
 
 	// BUT you have to overwrite a student1
 	student1 = total_marks_2(student1, 500)
