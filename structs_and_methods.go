@@ -22,7 +22,7 @@ func (s student) totalmarks() int {
 	return (s.ds_marks + s.os_marks)
 }
 
-//func main() {
+func main() {
 
 	student_one := student{
 		name:     "Rahul Verma",

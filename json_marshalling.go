@@ -27,7 +27,7 @@ type Person struct {
 // Exported identifiers - An identifier may be exported to permit
 // access to it from another package.
 
-//func main() {
+func main() {
 	// json marshalling
 	// generating json from a go object
 

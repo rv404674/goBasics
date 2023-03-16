@@ -1,12 +1,12 @@
-// you want speed (scale), but just don't want to write C++
+package main
 
-//package main
+// NOTE: Go is basically C++ wrapped over with some OOPS.
+// blazingly fast with almost no memory footprint.
 
-import "fmt"
+import (
+	"fmt"
+)
 
-//func main() {
-	//println - printline
-	//go run to directly build and run
-
-	fmt.Println("Hello World")
+func main() {
+	fmt.Println("my first go program")
 }

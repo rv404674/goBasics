@@ -27,12 +27,12 @@ func (s Student) total_marks() int {
 }
 
 //normal func
-func total_marks_2(Student s, new_marks int) Student {
+func total_marks_2(s Student, new_marks int) Student {
 	s.comp_sc_marks = new_marks
-	return new_marks
+	return s
 }
 
-//func main() {
+func main() {
 	student1 := Student{
 		name:          "Sumedha",
 		rollno:        151020,

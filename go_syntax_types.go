@@ -1,4 +1,4 @@
-//package main
+package main
 
 import (
 	"fmt"
@@ -15,7 +15,7 @@ func foo() {
 Topics
 Syntax
 TYpe
-Pointers 
+Pointers
 */
 
 // or fund add(x,y float64)
@@ -28,11 +28,12 @@ func multiple(x, y string) (string, string) {
 	return x, y
 }
 
-//func main() {
+func main() {
 
 	// you can type case
 	var a int = 62
 	var b float64 = float64(a)
+	fmt.Println(b)
 
 	var num1, num2 float64 = 5.6, 9.5
 

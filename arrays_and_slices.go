@@ -44,6 +44,7 @@ func main() {
 	}
 
 	// multidimensinal array
-	temp_a := [3][3]string{{"abc", "xyz"}, {"pqr", "xyz"}, {"dfs", "dfs"}}
+	tempA := [3][3]string{{"abc", "xyz"}, {"pqr", "xyz"}, {"dfs", "dfs"}}
+	fmt.Println(tempA)
 
 }

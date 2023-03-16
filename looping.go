@@ -1,8 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	_ "fmt"
+)
 
-//func main() {
+func main() {
 	// doesn't have a while loop
 
 	for i := 0; i < 10; i++ {
