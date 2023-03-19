@@ -26,7 +26,7 @@ func newCompMarks(s *Student, newMarks int) {
 }
 
 // value reciever
-func (s Student) total_marks() int {
+func (s Student) totalMarks() int {
 	//it makes a copy of s, and then to all the calculations/changes on it,
 	// thus ensuring originnal one stay intact.
 	return s.comp_sc_marks + s.ds_marks
