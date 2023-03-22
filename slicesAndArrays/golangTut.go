@@ -41,9 +41,65 @@ func arrayExamples() {
 	for index, val := range a {
 		fmt.Printf("index: %d, val: %d\n", index, val)
 	}
+}
 
+func sliceExamples() {
+	// NOTE:
+	// slice is basically a wrapper over existing arrays.
+	// they are just references to exiting arrays.
+
+	a := [5]int{76, 77, 78}
+	// slice
+	// [0,1]
+	var b []int = a[0:2]
+	fmt.Println(b)
+
+	// NOTE: way 2 of creatina a slice
+	c := []int{2, 3, 10}
+	fmt.Println(c)
+
+	// NOTE: a slice doesn't owns data of its own.
+	//  ANy changes made to a slice will reflect on the original array
+	darr := [...]int{10, 12, 13, 14, 15, 16, 16}
+	dslice := darr[0:5]
+	fmt.Println("array before", darr)
+
+	for ind, _ := range dslice {
+		dslice[ind]++
+	}
+
+	fmt.Println("array after", darr)
+
+	// Example 2
+	numa := [5]int{78, 79, 80}
+	nums1 := numa[:] // creates a slice which
+	nums2 := numa[:]
+
+	fmt.Println("array before change", numa)
+	nums1[0] = 100
+	fmt.Println("array after modificatin to array1", nums1)
+	nums2[1] = 200
+	fmt.Println("array after modificatin to array2", nums2)
+
+	// FIXME: most important
+	// length and capacity of a slice
+	// length - is the number of current elements
+	// capacity - is the size of the original array
+	fmt.Printf("Len of nums1: %d, Cap of nums1:%d", len(nums1), cap(nums2))
+
+	// NOTE: create your own slice
+	// (type, len, cap)
+	// cap is optional and defaults to length.
+	sliceArray := make([]int, 5)
+	fmt.Println()
+
+	sliceArray = append(sliceArray, 10)
+	sliceArray = append(sliceArray, 20)
+
+	// NOTE: during append under the hood a new array is created.
 }
 
 func main() {
-	arrayExamples()
+	//arrayExamples()
+	sliceExamples()
 }
