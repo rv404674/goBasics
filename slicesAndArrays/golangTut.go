@@ -48,7 +48,9 @@ func sliceExamples() {
 	// slice is basically a wrapper over existing arrays.
 	// they are just references to exiting arrays.
 
+	// an array
 	a := [5]int{76, 77, 78}
+
 	// slice
 	// [0,1]
 	var b []int = a[0:2]
@@ -93,6 +95,8 @@ func sliceExamples() {
 	sliceArray := make([]int, 5)
 	fmt.Println()
 
+	// NOTE: append will append at 6 element
+	// first 5 will be 0
 	sliceArray = append(sliceArray, 10)
 	sliceArray = append(sliceArray, 20)
 
